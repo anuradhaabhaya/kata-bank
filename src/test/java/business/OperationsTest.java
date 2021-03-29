@@ -1,7 +1,11 @@
+package business;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import model.Money;
 import org.junit.jupiter.api.Test;
 
-public class AccountTest {
+public class OperationsTest {
 
     @Test
     void bank_account_empty_when_creating_new_account() {
@@ -30,5 +34,31 @@ public class AccountTest {
         account.deposit( new Money( 23.0 ) );
 
         assertEquals( expectedBalanceOf222, account.getBalance() );
+    }
+
+    @Test
+    void balance_is_0_when_withdrawal_of_100() {
+        Account account = new Account();
+
+        Money expectedBalanceOf0 = new Money( 0.0 );
+        Money expectedBalanceOf100 = new Money( 100.0 );
+
+        account.deposit( new Money( 100.0 ) );
+        assertEquals( expectedBalanceOf100, account.getBalance() );
+        account.withdraw( new Money( 100.0 ));
+        assertEquals( expectedBalanceOf0, account.getBalance() );
+    }
+
+    @Test
+    void balance_is_200_when_withdrawal_of_152() {
+        Account account = new Account();
+
+        Money expectedBalanceOf352 = new Money( 352.0 );
+        Money expectedBalanceOf200 = new Money( 200.0 );
+
+        account.deposit( new Money( 352.0 ) );
+        assertEquals( expectedBalanceOf352, account.getBalance() );
+        account.withdraw( new Money( 152.0 ));
+        assertEquals( expectedBalanceOf200, account.getBalance() );
     }
 }

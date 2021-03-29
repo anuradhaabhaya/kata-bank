@@ -1,4 +1,7 @@
+package model;
+
 import java.math.BigDecimal;
+import java.util.Objects;
 
 public class Money {
     private BigDecimal amount;
@@ -15,6 +18,10 @@ public class Money {
         this.amount = this.amount.add( amount );
     }
 
+    public void withdraw(BigDecimal amount) {
+        this.amount = this.amount.subtract( amount );
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) { return true; }
@@ -27,6 +34,6 @@ public class Money {
 
     @Override
     public int hashCode() {
-        return amount.intValue();
+        return Objects.hash(amount);
     }
 }
