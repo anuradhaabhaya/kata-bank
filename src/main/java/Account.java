@@ -1,17 +1,16 @@
-import java.math.BigDecimal;
 
 public class Account {
-    private BigDecimal balance;
+    private Money balance;
 
     public Account () {
-        balance = BigDecimal.valueOf( 0 );
+        balance = new Money( 0.0 );
     }
 
-    public BigDecimal getAmount() {
+    public Money getBalance() {
         return balance;
     }
 
-    public void deposit(BigDecimal amount) {
-        balance = balance.add(amount);
+    public void deposit(Money money) {
+        balance.deposit(money.getAmount());
     }
 }
