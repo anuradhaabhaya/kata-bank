@@ -9,17 +9,12 @@ public class Money {
     public Money(Double amount) {
         this.amount = BigDecimal.valueOf(amount);
     }
+    public Money(BigDecimal amount) {
+        this.amount = amount;
+    }
 
     public BigDecimal getAmount() {
         return amount;
-    }
-
-    public void deposit(BigDecimal amount) {
-        this.amount = this.amount.add( amount );
-    }
-
-    public void withdraw(BigDecimal amount) {
-        this.amount = this.amount.subtract( amount );
     }
 
     @Override
@@ -35,5 +30,13 @@ public class Money {
     @Override
     public int hashCode() {
         return Objects.hash(amount);
+    }
+
+    public Money negate() {
+        return new Money (this.amount.negate());
+    }
+
+    public Money add(Money amount) {
+        return new Money(this.amount.add( amount.getAmount() ));
     }
 }

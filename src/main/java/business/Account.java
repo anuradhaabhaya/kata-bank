@@ -1,23 +1,28 @@
 package business;
 
 import model.Money;
+import model.History;
 
 public class Account {
-    private Money balance;
+    private History history;
 
-    public Account () {
-        balance = new Money( 0.0 );
+    public Account (History history) {
+        this.history = history;
     }
 
     public Money getBalance() {
-        return balance;
+        return history.getBalance();
     }
 
-    public void deposit(Money money) {
-        balance.deposit(money.getAmount());
+    public void deposit(String date, Money amount) {
+        history.deposit(date, amount);
     }
 
-    public void withdraw(Money money) {
-        balance.withdraw(money.getAmount());
+    public void withdraw(String date, Money amount) {
+        history.withdraw(date, amount);
+    }
+
+    public String getStatement(Statement statement) {
+        return statement.print(history);
     }
 }
