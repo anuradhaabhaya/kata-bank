@@ -1,4 +1,8 @@
-package model;
+package persistency;
+
+import model.Money;
+import model.Transaction;
+import model.TransactionType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +24,6 @@ public class History implements Operations {
 
     public Money getBalance() {
         if (transactions.isEmpty()) { return new Money (0.0); }
-
         return getLastTransactionBalance();
     }
 

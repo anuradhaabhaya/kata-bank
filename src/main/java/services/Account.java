@@ -1,7 +1,7 @@
-package business;
+package services;
 
 import model.Money;
-import model.History;
+import persistency.History;
 
 public class Account {
     private History history;

@@ -1,10 +1,10 @@
-package business;
+package services;
 
-import model.Operations;
+import persistency.Operations;
 import model.Transaction;
 
 
-public class Statement implements Printable {
+public class StringStatement implements Printable {
 
     public String print(Operations operations) {
         StringBuilder statement = new StringBuilder();

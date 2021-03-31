@@ -1,4 +1,7 @@
-package model;
+package persistency;
+
+import model.Money;
+import model.Transaction;
 
 import java.util.List;
 

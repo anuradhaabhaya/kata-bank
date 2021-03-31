@@ -1,11 +1,11 @@
-# Kata Bank business.Account
+# Kata Bank services.Account
 
 ## Bank-account
 Bank account kata
 Think of your personal bank account experience When in doubt, go for the simplest solution
 ## Requirements
 * Deposit and Withdrawal
-* business.Account statement (date, amount, balance)
+* services.Account statement (date, amount, balance)
 * Statement printing
 ## User Stories
 ### US 1:

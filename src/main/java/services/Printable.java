@@ -1,6 +1,6 @@
-package business;
+package services;
 
-import model.Operations;
+import persistency.Operations;
 
 public interface Printable {
     String print(Operations operations);
