@@ -8,7 +8,7 @@ public class Statement implements Printable {
 
     public String print(Operations operations) {
         StringBuilder statement = new StringBuilder();
-        statement.append( getTitle() );
+        statement.append( printHeader() );
         statement.append(System.lineSeparator());
 
         for (Transaction transaction: operations.getTransactions()) {
@@ -18,7 +18,7 @@ public class Statement implements Printable {
         return statement.toString();
     }
 
-    private String getTitle() {
+    private String printHeader() {
         return "operation | date | amount | balance";
     }
 

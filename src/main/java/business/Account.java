@@ -22,7 +22,7 @@ public class Account {
         history.withdraw(date, amount);
     }
 
-    public String getStatement(Statement statement) {
+    public String getStatement(Printable statement) {
         return statement.print(history);
     }
 }

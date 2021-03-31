@@ -17,6 +17,14 @@ public class Money {
         return amount;
     }
 
+    public Money negate() {
+        return new Money (this.amount.negate());
+    }
+
+    public Money add(Money amount) {
+        return new Money(this.amount.add( amount.getAmount() ));
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) { return true; }
@@ -30,13 +38,5 @@ public class Money {
     @Override
     public int hashCode() {
         return Objects.hash(amount);
-    }
-
-    public Money negate() {
-        return new Money (this.amount.negate());
-    }
-
-    public Money add(Money amount) {
-        return new Money(this.amount.add( amount.getAmount() ));
     }
 }
